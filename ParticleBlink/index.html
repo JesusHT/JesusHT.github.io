@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interruptor de Luz y Tacómetro</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="lampToggle">
+    <label class="switch" for="lampToggle"></label>
+
+    <input type="range" class="speedControl" id="speedControl" min="1" max="10" value="5" />
+    <label for="speedControl">Velocidad de Movimiento</label>
+
+    <div class="lamp-wrapper">
+      <svg
+        class="lamp"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 133 175"
+        fill="none"
+      >
+        <rect width="40" height="35" x="46" y="85" fill="#272B28" rx="5" />
+        <path fill="#494037" d="M133 175H0a66 66 0 01133 0z" />
+        <path stroke="#272B28" stroke-width="6" d="M66 0v99" />
+      </svg>
+    </div>
+    <div class="beam"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+
+    <script src="./public/js/app.js"></script>
+  </body>
+</html>

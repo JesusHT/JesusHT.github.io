@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- styles -->
+  <link rel="stylesheet" type="text/css" href="../public/css/semantic.min.css">
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./public/css/style.css" />
+
+  <title>Apagador led</title>
+</head>
+
+<body>
+
+  <!-- Nav -->
+  <nav class="ui stackable menu inverted">
+    <div class="item">
+      <img src="../assets/Grizzly_la.webp" alt="Grizzly_la" title="Grizzly_la">
+      <p>JesusHT</p>
+    </div>
+    <div class="ui inverted secondary pointing right menu">
+      <a href="../index.html" class="item">Inicio</a>
+      <a href="../Temperatura/index.html" class="item">Temperatura</a>
+      <a href="../Apagador/index.html" class="item active">Apagador</a>
+    </div>
+  </nav>
+
+  <!-- Container -->
+  <label for="lightSwitch" class="wrap">
+    <input type="checkbox" id="lightSwitch" name="lightSwitch" class="light-switch" />
+    <div class="panel">
+      <div class="overlay"></div>
+      <div class="screw top">
+        <div class="screw__slot"></div>
+      </div>
+      <div class="switch__hole">
+        <div class="switch__groove">
+          <div class="switch">
+            <div class="switch__shadow-box top">
+              <div class="switch__shadow top"></div>
+            </div>
+            <div class="switch__shadow-box bottom">
+              <div class="switch__shadow bottom"></div>
+            </div>
+            <div class="switch__top">
+              <div class="switch__top-outset"></div>
+            </div>
+            <div class="switch__bottom">
+              <div class="switch__bottom-outset"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screw bottom">
+        <div class="screw__slot"></div>
+      </div>
+    </div>
+  </label>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particle-api-js@10/dist/particle.min.js"></script>
+  <script src="../config.js"></script>
+  <script src="./public/js/app.js"></script>
+</body>
+
+</html>

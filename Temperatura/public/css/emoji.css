@@ -1,0 +1,55 @@
+.emoji {
+    font-size: 15vmin;
+    margin-bottom: 0.3em;
+    text-align: center;
+    text-shadow: 0.02em 0.02em 0.02em rgba(0, 0, 0, 0.3);
+}
+
+.slider {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font:inherit;
+    font-size: 10vmin;
+    width: 4em;
+    height: 0.2em;
+    border-radius: 1em;  
+    background-image: linear-gradient(90deg, #384bdc, #33994a, #df3b33); 
+    box-shadow: inset 0 0 0.05em rgba(0, 0, 0, 0.6);
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    position: relative;
+    width: 0.25em;
+    height: 0.38em;
+    border-radius: 0.08em; 
+    background-image: radial-gradient(#eee, #ccc);    
+    filter: drop-shadow(0.02em 0.02em 0.02em rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+    -webkit-appearance: none;
+            appearance: none;
+}
+
+.slider::-moz-range-thumb {
+    position: relative;
+    width: 0.25em;
+    height: 0.38em;
+    border-radius: 0.08em; 
+    background-image: radial-gradient(#eee, #bbb);    
+    filter: drop-shadow(0.02em 0.02em 0.02em rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+    border: none;
+    -moz-appearance: none;
+         appearance: none;
+}
+
+.temperature {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 2.5em;
+    font-weight: 400;
+    margin-top: 0.45em;
+    color: #111;
+    text-shadow: 0.02em 0.02em 0.02em rgba(0, 0, 0, 0.1);
+}
