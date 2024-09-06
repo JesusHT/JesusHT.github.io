@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./public/css/semantic.min.css">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./public/css/semantic.min.css">
+    <link rel="stylesheet" href="./public/css/unicycle.css">
     <title>Particle</title>
 </head>
-
 <body>
     <!-- Nav -->
     <nav class="ui stackable menu inverted">
@@ -24,7 +27,64 @@
     </nav>
 
     <!-- Container -->
-    
+    <!-- Variables -->
+    <div class="ui two column centered grid">
+        <div class="four column centered row">
+            <div class="ui column segment center aligned">
+                <h3>Valor anterior de TMS</h3>
+                <span id="initialTMSValue">???</span>
+            </div>
+            <div class="ui column segment center aligned">
+                <h3>Nuevo valor de TMS</h3>
+                <span id="newTMSValue">???</span>
+            </div>
+        </div>
+        <div class="ui column center aligned">
+        </div>
+    </div>
 
+    <!-- Form -->
+    <div class="ui two column centered grid">
+        <div class="ui column center aligned">
+            <form>
+                <div id="unicycle1" class="unicycle">
+                    <input type="range" class="unicycle__wheel" id="tms" name="unicycle" min="0" max="100" step="1">
+                    <div class="unicycle__marker">
+                        <div class="unicycle__rider-head"></div>
+                        <div class="unicycle__rider-body">
+                            <div class="unicycle__left-arm">
+                                <div class="unicycle__left-lower-arm"></div>
+                            </div>
+                            <div class="unicycle__right-arm">
+                                <div class="unicycle__right-lower-arm">
+                                    <div class="unicycle__flag-pole">
+                                        <div class="unicycle__flag">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="unicycle__left-leg">
+                                <div class="unicycle__left-lower-leg"></div>
+                            </div>
+                            <div class="unicycle__right-leg">
+                                <div class="unicycle__right-lower-leg"></div>
+                            </div>
+                        </div>
+                        <div class="unicycle__seat"></div>
+                        <div class="unicycle__bar"></div>
+                        <div class="unicycle__pedal-arms">
+                            <div class="unicycle__pedal"></div>
+                            <div class="unicycle__pedal"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particle-api-js@10/dist/particle.min.js"></script>
+    <script src="./config.js"></script>
+    <script src="./public/js/unicycle.js"></script>
+    <script src="./public/js/app.js"></script>
 </body>
 </html>
