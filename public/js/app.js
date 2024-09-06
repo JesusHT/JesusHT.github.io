@@ -1,39 +1,39 @@
 /**
- * Instancia de la clase Particle para interactuar con la API de Particle.
+ * Instance of the Particle class for interacting with the Particle API.
  * @type {Particle}
  */
 const particle = new Particle();
 
 /**
- * Referencia al slider HTML que se usa para ajustar el valor de TMS.
+ * Reference to the HTML slider used for adjusting the TMS value.
  * @type {HTMLInputElement}
  */
 const slider = document.querySelector('#tms');
 
 /**
- * Referencia al elemento HTML que muestra el valor inicial de TMS.
+ * Reference to the HTML element that displays the initial TMS value.
  * @type {HTMLElement}
  */
 const initialTMSValueElement = document.querySelector('#initialTMSValue');
 
 /**
- * Referencia al elemento HTML que muestra el nuevo valor de TMS.
+ * Reference to the HTML element that shows the new TMS value.
  * @type {HTMLElement}
  */
 const newTMSValueElement = document.querySelector('#newTMSValue');
 
 /**
- * Token de acceso para autenticar las solicitudes a la API de Particle.
+ * Access token for authenticating requests to the Particle API.
  * @type {string|undefined}
  */
 let token;
 
 /**
- * Inicia sesión en la API de Particle usando las credenciales proporcionadas.
+ * Logs in to the Particle API using provided credentials.
  *
  * @async
  * @function login
- * @throws {Error} Lanza un error si no se puede iniciar sesión.
+ * @throws {Error} Throws an error if login fails.
  */
 async function login() {
     try {
@@ -46,35 +46,35 @@ async function login() {
 }
 
 /**
- * Obtiene el nuevo valor de TMS del dispositivo y lo actualiza en la interfaz de usuario.
+ * Retrieves the new TMS value from the device and updates the user interface.
  *
  * @async
  * @function getNewTMSValue
- * @throws {Error} Lanza un error si ocurre un problema al obtener el valor.
+ * @throws {Error} Throws an error if there is an issue retrieving the value.
  */
 async function getNewTMSValue() {
     try {
         const response = await particle.getVariable({ deviceId: deviceId, name: 'TMS_Value', auth: token });
         newTMSValueElement.textContent = response.body.result;
     } catch (err) {
-        console.log('An error occurred while getting initial TMS value:', err);
+        console.log('An error occurred while getting new TMS value:', err);
     }
 }
 
 /**
- * Obtiene el valor de TMS del dispositivo y actualiza el slider y la interfaz de usuario.
+ * Retrieves the TMS value from the device, updates the slider, and updates the user interface.
  *
  * @async
  * @function getTMSValue
- * @throws {Error} Lanza un error si ocurre un problema al obtener el valor.
+ * @throws {Error} Throws an error if there is an issue retrieving the value.
  */
 async function getTMSValue() {
     try {
         const response = await particle.getVariable({ deviceId: deviceId, name: 'TMS_Value', auth: token });
         const tmsValue = response.body.result;
         
-        // Actualizar el valor del slider y la interfaz de usuario
-        slider.value = tmsValue; // Ajustar el slider al valor recuperado
+        // Update the slider and the user interface with the retrieved value
+        slider.value = tmsValue; // Set the slider to the retrieved value
         initialTMSValueElement.textContent = tmsValue;
         new UnicycleRangeSlider("#unicycle1");
     } catch (err) {
@@ -83,11 +83,11 @@ async function getTMSValue() {
 }
 
 /**
- * Actualiza el valor de TMS en el dispositivo según el valor del slider y actualiza la interfaz de usuario.
+ * Updates the TMS value on the device according to the slider value and updates the user interface.
  *
  * @async
  * @function updateTMSValue
- * @throws {Error} Lanza un error si ocurre un problema al llamar a la función del dispositivo.
+ * @throws {Error} Throws an error if there is an issue calling the device function.
  */
 async function updateTMSValue() {
     try {
@@ -99,21 +99,21 @@ async function updateTMSValue() {
             auth: token
         });
 
-        // Actualizar el valor nuevo en la interfaz de usuario
+        // Update the new value in the user interface
         initialTMSValueElement.textContent = value;
     } catch (err) {
         console.log('Error occurred while calling function:', err);
     }
 }
 
-// Configurar eventos y actualización al cargar el documento.
+// Set up event listeners and updates when the document is loaded.
 document.addEventListener("DOMContentLoaded", async () => {
-    await login(); // Iniciar sesión
-    await getTMSValue(); // Obtener el valor inicial de TMS
+    await login(); // Log in to the API
+    await getTMSValue(); // Retrieve the initial TMS value
     
-    // Actualizar el valor cuando cambie el slider
+    // Update the TMS value when the slider changes
     slider.addEventListener('change', async () => {
-        await updateTMSValue(); // Actualizar valor de TMS en el dispositivo
-        await getNewTMSValue(); // Obtener el valor inicial de TMS
+        await updateTMSValue(); // Update the TMS value on the device
+        await getNewTMSValue(); // Retrieve and display the new TMS value
     });
 });

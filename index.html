@@ -4,38 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
+    <!-- Favicon: Icon displayed in the browser tab -->
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 
-    <!-- CSS -->
+    <!-- CSS: Links to stylesheets for page design -->
     <link rel="stylesheet" type="text/css" href="./public/css/semantic.min.css">
     <link rel="stylesheet" href="./public/css/unicycle.css">
     <title>Particle</title>
 </head>
 <body>
-    <!-- Nav -->
+    <!-- Main Navigation -->
     <nav class="ui stackable menu inverted">
         <div class="item">
             <img src="./assets/Grizzly_la.webp" alt="Grizzly_la" title="Grizzly_la">
             <p>JesusHT</p>
         </div>
         <div class="ui inverted secondary pointing right menu">
-            <a href="" class="item active">Inicio</a>
-            <a href="./Temperatura" class="item">Temperatura</a>
-            <a href="./Apagador" class="item">Apagador</a>
+            <!-- Navigation Links -->
+            <a href="" class="item active">Home</a>
+            <a href="./Temperatura" class="item">Temperature</a>
+            <a href="./Apagador" class="item">Switch</a>
         </div>
     </nav>
 
-    <!-- Container -->
-    <!-- Variables -->
+    <!-- Main Container -->
     <div class="ui two column centered grid">
         <div class="four column centered row">
+            <!-- Section to display TMS values -->
             <div class="ui column segment center aligned">
-                <h3>Valor anterior de TMS</h3>
+                <h3>Previous TMS Value</h3>
                 <span id="initialTMSValue">???</span>
             </div>
             <div class="ui column segment center aligned">
-                <h3>Nuevo valor de TMS</h3>
+                <h3>New TMS Value</h3>
                 <span id="newTMSValue">???</span>
             </div>
         </div>
@@ -43,10 +44,11 @@
         </div>
     </div>
 
-    <!-- Form -->
+    <!-- Form with slider control for TMS -->
     <div class="ui two column centered grid">
         <div class="ui column center aligned">
             <form>
+                <!-- Unicycle: Graphical representation of the slider control -->
                 <div id="unicycle1" class="unicycle">
                     <input type="range" class="unicycle__wheel" id="tms" name="unicycle" min="0" max="100" step="1">
                     <div class="unicycle__marker">
@@ -82,7 +84,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particle-api-js@10/dist/particle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particle-api-js@10/dist/particle.min.js"></script> <!-- API Particle -->
     <script src="./config.js"></script>
     <script src="./public/js/unicycle.js"></script>
     <script src="./public/js/app.js"></script>
